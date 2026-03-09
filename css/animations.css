@@ -1,0 +1,245 @@
+/* ============================================================
+   POTÊNCIA BR – Animations & Keyframes
+   ============================================================ */
+
+/* ---------- KEYFRAMES ---------- */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Glowing pulse for primary CTA */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255,184,0,0), 0 4px 16px rgba(255,184,0,0.2);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(255,184,0,0), 0 4px 24px rgba(255,184,0,0.35);
+  }
+}
+
+/* Ticker scroll */
+@keyframes tickerScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Floating card */
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+/* Shield ring pulse */
+@keyframes ringPulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%       { opacity: 0.9; transform: scale(1.04); }
+}
+
+/* Scroll bounce */
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
+
+/* Badge pop */
+@keyframes badgePop {
+  0%   { transform: scale(0); opacity: 0; }
+  70%  { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Badge urgency pulse */
+@keyframes badgePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255,184,0,0); }
+  50%       { box-shadow: 0 0 0 8px rgba(255,184,0,0.15); }
+}
+
+/* WhatsApp button bounce */
+@keyframes wappBounce {
+  0%, 100%  { transform: translateY(0) scale(1); }
+  10%, 30%  { transform: translateY(-8px) scale(1.05); }
+  20%       { transform: translateY(-4px) scale(1); }
+  40%       { transform: translateY(0) scale(1); }
+}
+
+/* Number count up shimmer */
+@keyframes numShimmer {
+  0%   { opacity: 0.5; transform: scale(0.95); }
+  50%  { opacity: 1;   transform: scale(1.02); }
+  100% { opacity: 1;   transform: scale(1); }
+}
+
+/* Spinner for loading states */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* Gradient shift */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Typewriter blink cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Slide in from left for mobile nav */
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+/* ---------- AOS-STYLE SCROLL ANIMATIONS ---------- */
+/* These are applied via JS adding/removing .aos-animate class */
+
+[data-aos] {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+[data-aos="fade-up"] {
+  transform: translateY(40px);
+}
+
+[data-aos="fade-right"] {
+  transform: translateX(-40px);
+}
+
+[data-aos="fade-left"] {
+  transform: translateX(40px);
+}
+
+[data-aos="fade-in"] {
+  transform: none;
+}
+
+[data-aos].animated {
+  opacity: 1;
+  transform: none;
+}
+
+[data-aos][data-aos-delay="100"].animated { transition-delay: 0.1s; }
+[data-aos][data-aos-delay="200"].animated { transition-delay: 0.2s; }
+[data-aos][data-aos-delay="300"].animated { transition-delay: 0.3s; }
+[data-aos][data-aos-delay="400"].animated { transition-delay: 0.4s; }
+
+/* ---------- SHIMMER / SKELETON EFFECT ---------- */
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(127,140,77,0.08) 50%,
+    transparent 100%
+  );
+  animation: shimmerSlide 2.5s ease infinite;
+}
+@keyframes shimmerSlide {
+  0%   { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* ---------- TILT EFFECT ---------- */
+[data-tilt] {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ---------- HERO GRADIENT ANIMATED BG ---------- */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(127,140,77,0.05) 0%,
+    transparent 45%,
+    rgba(255,184,0,0.02) 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 14s ease infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---------- BENTO CARD HOVER TILT ---------- */
+.bento-card:nth-child(odd) { animation-delay: 0.1s; }
+.bento-card:nth-child(even) { animation-delay: 0.2s; }
+
+/* ---------- PHONE SCREEN CONTENT FADE ---------- */
+.phone-screen .app-screen-body > * {
+  animation: fadeInUp 0.5s ease both;
+}
+.phone-screen .app-status-card { animation-delay: 0.1s; }
+.phone-screen .app-quick-actions { animation-delay: 0.2s; }
+.phone-screen .app-recent { animation-delay: 0.3s; }
+
+/* ---------- COUNTER ANIMATION ---------- */
+.counting {
+  animation: numShimmer 0.4s ease;
+}
+
+/* ---------- SUCCESS CHECK ANIMATION ---------- */
+.success-icon {
+  animation: badgePop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ---------- LOGO ACCENT GLOW ---------- */
+.logo-accent {
+  text-shadow: 0 0 12px rgba(127,140,77,0.55);
+  animation: glowPulse 3s ease infinite;
+}
+@keyframes glowPulse {
+  0%, 100% { text-shadow: 0 0 8px rgba(127,140,77,0.4); }
+  50%       { text-shadow: 0 0 20px rgba(127,140,77,0.75), 0 0 40px rgba(127,140,77,0.25); }
+}
+
+/* ---------- TRUST TICKER PAUSE ON MOBILE ---------- */
+@media (max-width: 768px) {
+  .trust-ticker { animation-duration: 20s; }
+  [data-aos] { opacity: 1; transform: none; }
+}
+
+/* ---------- REDUCED MOTION SUPPORT ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  [data-aos] { opacity: 1; transform: none; }
+}
