@@ -116,39 +116,7 @@
   to   { transform: translateX(0); opacity: 1; }
 }
 
-/* ---------- AOS-STYLE SCROLL ANIMATIONS ---------- */
-/* These are applied via JS adding/removing .aos-animate class */
-
-[data-aos] {
-  opacity: 0;
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-[data-aos="fade-up"] {
-  transform: translateY(40px);
-}
-
-[data-aos="fade-right"] {
-  transform: translateX(-40px);
-}
-
-[data-aos="fade-left"] {
-  transform: translateX(40px);
-}
-
-[data-aos="fade-in"] {
-  transform: none;
-}
-
-[data-aos].animated {
-  opacity: 1;
-  transform: none;
-}
-
-[data-aos][data-aos-delay="100"].animated { transition-delay: 0.1s; }
-[data-aos][data-aos-delay="200"].animated { transition-delay: 0.2s; }
-[data-aos][data-aos-delay="300"].animated { transition-delay: 0.3s; }
-[data-aos][data-aos-delay="400"].animated { transition-delay: 0.4s; }
+/* ---------- AOS-STYLE SCROLL ANIMATIONS (removed – caused blank page) ---------- */
 
 /* ---------- SHIMMER / SKELETON EFFECT ---------- */
 .shimmer {
