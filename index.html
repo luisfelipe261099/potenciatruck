@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="description" content="Potência BR – Proteção Veicular Premium. Segurança de elite, digital e inabalável. Cotar agora com 20% de desconto." />
   <title>Potência BR | Proteção Veicular Premium</title>
 
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/animations.css" />
   <style>
-    /* ── Brand Identity Overrides – Potência BR Tactical Edition ── */
+    /* ── Brand Identity – Potência BR Corporate ── */
     :root {
       --olive:   #7F8C4D;
       --olive-lt:#A8B57A;
@@ -29,9 +29,12 @@
       border: 1.5px solid var(--olive);
       color: var(--olive);
     }
-    /* Logo text treatment: POTÊNCIA in platinum, BR in olive */
-    .logo-text { letter-spacing: 0.1em; color: var(--platinum, #B4B8C0); }
+    /* Logo text: dark on light bg */
+    .logo-text { letter-spacing: 0.1em; color: #1C1C1A; }
     .logo-accent { color: var(--olive); font-weight: 900; }
+    /* Nav transparent state */
+    .navbar:not(.scrolled) .nav-links a { color: rgba(28,28,26,0.72); }
+    .navbar:not(.scrolled) .nav-links a:hover { color: var(--olive); }
     /* Nav link underline in olive */
     .nav-links a::after { background: var(--olive); }
     /* Trust ticker divider dots */
@@ -48,6 +51,13 @@
     .footer-socials a:hover { background: rgba(127,140,77,0.15); border-color: var(--olive); color: var(--olive); }
     /* Hero badge: olive tint */
     .hero-badge { border-color: rgba(127,140,77,0.4); }
+    /* iOS safe area for bottom bar */
+    .mobile-emergency-bar {
+      padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
+    }
+    @media (max-width: 768px) {
+      body { padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
+    }
   </style>
 </head>
 <body>
