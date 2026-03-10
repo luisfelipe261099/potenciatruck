@@ -1,42 +1,95 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Potência BR – Proteção Veicular Premium. Segurança de elite, digital e inabalável. Cotar agora com 20% de desconto." />
+  <meta name="description"
+    content="Potência BR – Proteção Veicular Premium. Segurança de elite, digital e inabalável. Cotar agora com 20% de desconto." />
   <title>Potência BR | Proteção Veicular Premium</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Sora:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Sora:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Sora:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Sora:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap" />
+  </noscript>
 
   <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print"
+    onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  </noscript>
 
   <!-- Stylesheets -->
+  <link rel="preload" as="style" href="css/styles.css" />
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/animations.css" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="css/animations.css" />
+  </noscript>
   <style>
     /* ── Brand Identity – Potência BR Corporate ── */
     :root {
-      --olive:   #7F8C4D;
-      --olive-lt:#A8B57A;
+      --olive: #5E6939;
+      --olive-lt: #7F8C4D;
     }
+
+    /* Skip link styling */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--olive);
+      color: white;
+      padding: 8px;
+      z-index: 2000;
+      transition: top 0.3s;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
     /* Logo mark: shield with olive border */
     .logo-icon {
       background: transparent;
       border: 1.5px solid var(--olive);
       color: var(--olive);
     }
+
     /* Logo text: dark on light bg */
-    .logo-text { letter-spacing: 0.1em; color: #1C1C1A; }
-    .logo-accent { color: var(--olive); font-weight: 900; }
+    .logo-text {
+      letter-spacing: 0.1em;
+      color: #1C1C1A;
+    }
+
+    .logo-accent {
+      color: var(--olive);
+      font-weight: 900;
+    }
+
     /* Nav transparent state */
-    .navbar:not(.scrolled) .nav-links a { color: rgba(28,28,26,0.72); }
-    .navbar:not(.scrolled) .nav-links a:hover { color: var(--olive); }
+    .navbar:not(.scrolled) .nav-links a {
+      color: rgba(28, 28, 26, 0.72);
+    }
+
+    .navbar:not(.scrolled) .nav-links a:hover {
+      color: var(--olive);
+    }
+
     /* Nav link underline in olive */
-    .nav-links a::after { background: var(--olive); }
+    .nav-links a::after {
+      background: var(--olive);
+    }
+
     /* Trust ticker divider dots */
     .trust-ticker span::after {
       content: '\2022';
@@ -45,22 +98,39 @@
       color: var(--olive);
       opacity: 0.4;
     }
+
     /* Footer col headings: olive */
-    .footer-col h4 { color: var(--olive); }
+    .footer-col h4 {
+      color: var(--olive);
+    }
+
     /* Footer social hover: olive */
-    .footer-socials a:hover { background: rgba(127,140,77,0.15); border-color: var(--olive); color: var(--olive); }
+    .footer-socials a:hover {
+      background: rgba(127, 140, 77, 0.15);
+      border-color: var(--olive);
+      color: var(--olive);
+    }
+
     /* Hero badge: olive tint */
-    .hero-badge { border-color: rgba(127,140,77,0.4); }
+    .hero-badge {
+      border-color: rgba(127, 140, 77, 0.4);
+    }
+
     /* iOS safe area for bottom bar */
     .mobile-emergency-bar {
       padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
     }
+
     @media (max-width: 768px) {
-      body { padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
+      body {
+        padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+      }
     }
   </style>
 </head>
+
 <body>
+  <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
   <!-- ========== STICKY NAV ========== -->
   <nav class="navbar" id="navbar">
@@ -87,576 +157,597 @@
     </div>
   </nav>
 
-  <!-- ========== HERO ========== -->
-  <section class="hero" id="hero">
-    <div class="hero-bg-grid"></div>
-    <div class="hero-orbs">
-      <div class="orb orb-1"></div>
-      <div class="orb orb-2"></div>
-      <div class="orb orb-3"></div>
-    </div>
-    <div class="container hero-inner">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <i class="fas fa-circle-check"></i>
-          <span>+30.000 veículos protegidos em todo Brasil</span>
-        </div>
-        <h1 class="hero-title">
-          A Nova Era da<br />
-          <span class="gradient-text">Proteção Veicular:</span><br />
-          Inteligente, Digital<br />e Inabalável.
-        </h1>
-        <p class="hero-subtitle">
-          Segurança de elite com economia real. Sem análise de perfil,
-          sem burocracia, <strong>100% de confiança.</strong>
-        </p>
-        <div class="hero-ctas">
-          <a href="#calculadora" class="btn btn-primary btn-xl pulse-glow">
-            <i class="fas fa-bolt"></i>
-            Cotar Agora com 20% de Desconto
-          </a>
-          <a href="#comparativo" class="btn btn-ghost btn-xl">
-            <i class="fas fa-play-circle"></i>
-            Ver Como Funciona
-          </a>
-        </div>
-        <div class="hero-stats">
-          <div class="stat-pill"><span class="stat-num">30k+</span><span class="stat-label">Veículos</span></div>
-          <div class="stat-pill"><span class="stat-num">24/7</span><span class="stat-label">Suporte</span></div>
-          <div class="stat-pill"><span class="stat-num">100%</span><span class="stat-label">Digital</span></div>
-          <div class="stat-pill"><span class="stat-num">FIPE</span><span class="stat-label">Garantida</span></div>
-        </div>
+  <main id="main-content">
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero">
+      <div class="hero-bg-grid"></div>
+      <div class="hero-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
       </div>
-      <div class="hero-visual">
-        <div class="car-shield-wrapper">
-          <div class="shield-ring ring-1"></div>
-          <div class="shield-ring ring-2"></div>
-          <div class="shield-ring ring-3"></div>
-          <div class="car-card glass-card">
-            <div class="car-icon-big">
-              <i class="fas fa-car-side"></i>
-              <div class="shield-overlay"><i class="fas fa-shield-halved"></i></div>
-            </div>
-            <div class="car-card-stats">
-              <div class="ccs-item">
-                <span class="ccs-label">Cobertura Ativa</span>
-                <span class="ccs-value status-active"><i class="fas fa-circle"></i> On</span>
-              </div>
-              <div class="ccs-item">
-                <span class="ccs-label">Assistência 24h</span>
-                <span class="ccs-value status-active"><i class="fas fa-circle"></i> On</span>
-              </div>
-              <div class="ccs-item">
-                <span class="ccs-label">Via FIPE</span>
-                <span class="ccs-value text-cyan">R$ 85.000</span>
-              </div>
-            </div>
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fas fa-circle-check"></i>
+            <span>+30.000 veículos protegidos em todo Brasil</span>
+          </div>
+          <h1 class="hero-title">
+            A Nova Era da<br />
+            <span class="gradient-text">Proteção Veicular:</span><br />
+            Inteligente, Digital<br />e Inabalável.
+          </h1>
+          <p class="hero-subtitle">
+            Segurança de elite com economia real. Sem análise de perfil,
+            sem burocracia, <strong>100% de confiança.</strong>
+          </p>
+          <div class="hero-ctas">
+            <a href="#calculadora" class="btn btn-primary btn-xl pulse-glow">
+              <i class="fas fa-bolt"></i>
+              Cotar Agora com 20% de Desconto
+            </a>
+            <a href="#comparativo" class="btn btn-ghost btn-xl">
+              <i class="fas fa-play-circle"></i>
+              Ver Como Funciona
+            </a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-pill"><span class="stat-num">30k+</span><span class="stat-label">Veículos</span></div>
+            <div class="stat-pill"><span class="stat-num">24/7</span><span class="stat-label">Suporte</span></div>
+            <div class="stat-pill"><span class="stat-num">100%</span><span class="stat-label">Digital</span></div>
+            <div class="stat-pill"><span class="stat-num">FIPE</span><span class="stat-label">Garantida</span></div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="hero-scroll-hint">
-      <span>Role para explorar</span>
-      <div class="scroll-arrow"><i class="fas fa-angle-down"></i></div>
-    </div>
-  </section>
-
-  <!-- ========== TRUST BAR ========== -->
-  <div class="trust-bar">
-    <div class="trust-ticker-wrap">
-      <div class="trust-ticker" id="trustTicker">
-        <span><i class="fas fa-car"></i> 30.000+ Veículos Protegidos</span>
-        <span><i class="fas fa-headset"></i> Cobertura Nacional 24/7</span>
-        <span><i class="fas fa-star"></i> Selo Reclame Aqui Ótimo</span>
-        <span><i class="fas fa-chart-line"></i> Tabela FIPE Garantida</span>
-        <span><i class="fas fa-mobile-screen"></i> 100% Digital</span>
-        <span><i class="fas fa-shield-halved"></i> Sem Análise de Perfil</span>
-        <span><i class="fas fa-bolt"></i> Ativação em Minutos</span>
-        <span><i class="fas fa-handshake"></i> Modelo Mutualista Transparente</span>
-        <!-- duplicated for seamless loop -->
-        <span><i class="fas fa-car"></i> 30.000+ Veículos Protegidos</span>
-        <span><i class="fas fa-headset"></i> Cobertura Nacional 24/7</span>
-        <span><i class="fas fa-star"></i> Selo Reclame Aqui Ótimo</span>
-        <span><i class="fas fa-chart-line"></i> Tabela FIPE Garantida</span>
-        <span><i class="fas fa-mobile-screen"></i> 100% Digital</span>
-        <span><i class="fas fa-shield-halved"></i> Sem Análise de Perfil</span>
-        <span><i class="fas fa-bolt"></i> Ativação em Minutos</span>
-        <span><i class="fas fa-handshake"></i> Modelo Mutualista Transparente</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- ========== BENTO BENEFITS ========== -->
-  <section class="benefits" id="beneficios">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Ecossistema de Proteção</span>
-        <h2 class="section-title">Cobertura <span class="gradient-text">Completa</span> para sua Tranquilidade</h2>
-        <p class="section-desc">Cada detalhe pensado para proteger você em qualquer situação.</p>
-      </div>
-      <div class="bento-grid">
-
-        <div class="bento-card bento-large glass-card" data-tilt>
-          <div class="bento-icon"><i class="fas fa-mask"></i></div>
-          <h3>Furto & Roubo</h3>
-          <p>Recuperação total do veículo ou pagamento do valor FIPE integral. Zero burocracia no momento que você mais precisa.</p>
-          <div class="bento-badge">100% FIPE</div>
-          <div class="bento-glow"></div>
-        </div>
-
-        <div class="bento-card glass-card" data-tilt>
-          <div class="bento-icon"><i class="fas fa-car-burst"></i></div>
-          <h3>Colisão & Danos</h3>
-          <p>Rede credenciada de reparadores especializados em todo o Brasil.</p>
-          <div class="bento-glow"></div>
-        </div>
-
-        <div class="bento-card glass-card" data-tilt>
-          <div class="bento-icon"><i class="fas fa-cloud-bolt"></i></div>
-          <h3>Eventos da Natureza</h3>
-          <p>Proteção contra enchentes, granizo, vendaval e demais fenômenos climáticos.</p>
-          <div class="bento-glow"></div>
-        </div>
-
-        <div class="bento-card glass-card" data-tilt>
-          <div class="bento-icon"><i class="fas fa-people-arrows"></i></div>
-          <h3>Cobertura para Terceiros</h3>
-          <p>Até <strong>R$ 50.000</strong> de indenização a terceiros envolvidos em acidentes.</p>
-          <div class="bento-badge amber">R$50k</div>
-          <div class="bento-glow"></div>
-        </div>
-
-        <div class="bento-card bento-wide glass-card" data-tilt>
-          <div class="bento-icon"><i class="fas fa-truck-medical"></i></div>
-          <h3>Assistência 24 Horas</h3>
-          <p>Guincho de emergência, chaveiro, socorro elétrico e mecânico — a qualquer hora, em qualquer lugar do Brasil. Um toque no app já aciona tudo.</p>
-          <div class="bento-badge">24/7 Nacional</div>
-          <div class="bento-glow"></div>
-        </div>
-
-        <div class="bento-card glass-card" data-tilt>
-          <div class="bento-icon"><i class="fas fa-mobile-screen-button"></i></div>
-          <h3>Gestão pelo App</h3>
-          <p>Abertura de sinistro, acompanhamento e documentos — tudo digital.</p>
-          <div class="bento-glow"></div>
-        </div>
-
-        <div class="bento-card glass-card" data-tilt>
-          <div class="bento-icon"><i class="fas fa-motorcycle"></i></div>
-          <h3>Motos & SUVs</h3>
-          <p>Cobertura premium para toda a família de veículos, incluindo motocicletas.</p>
-          <div class="bento-glow"></div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== COMPARISON TABLE ========== -->
-  <section class="comparison" id="comparativo">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Por Que nos Escolher</span>
-        <h2 class="section-title">O Fim da Era <span class="gradient-text">Burocrática</span></h2>
-        <p class="section-desc">Veja lado a lado por que a Potência BR é a escolha inteligente.</p>
-      </div>
-      <div class="comparison-grid">
-        <!-- Old Insurance -->
-        <div class="comp-card comp-old">
-          <div class="comp-header">
-            <div class="comp-icon old"><i class="fas fa-building-columns"></i></div>
-            <h3>Seguro Tradicional</h3>
-            <span class="comp-tag old-tag">Ultrapassado</span>
-          </div>
-          <ul class="comp-list">
-            <li class="bad"><i class="fas fa-xmark"></i> Análise de perfil discriminatória</li>
-            <li class="bad"><i class="fas fa-xmark"></i> Processo lento e burocrático</li>
-            <li class="bad"><i class="fas fa-xmark"></i> Preço elevado sem justificativa</li>
-            <li class="bad"><i class="fas fa-xmark"></i> Atendimento por terceirizados</li>
-            <li class="bad"><i class="fas fa-xmark"></i> Renovação anual complicada</li>
-            <li class="bad"><i class="fas fa-xmark"></i> Poucas opções de cobertura</li>
-            <li class="bad"><i class="fas fa-xmark"></i> Sinistro demora semanas</li>
-          </ul>
-        </div>
-        <!-- VS Divider -->
-        <div class="comp-vs">
-          <div class="vs-circle">VS</div>
-          <div class="vs-line"></div>
-        </div>
-        <!-- Potência BR -->
-        <div class="comp-card comp-new glass-card featured">
-          <div class="comp-header">
-            <div class="comp-icon new"><i class="fas fa-shield-halved"></i></div>
-            <h3>Potência BR</h3>
-            <span class="comp-tag new-tag"><i class="fas fa-bolt"></i> Recomendado</span>
-          </div>
-          <ul class="comp-list">
-            <li class="good"><i class="fas fa-check"></i> Sem análise de perfil</li>
-            <li class="good"><i class="fas fa-check"></i> Ativação 100% digital em minutos</li>
-            <li class="good"><i class="fas fa-check"></i> Preço justo via modelo mutualista</li>
-            <li class="good"><i class="fas fa-check"></i> Suporte próprio 24/7</li>
-            <li class="good"><i class="fas fa-check"></i> Gestão completa pelo app</li>
-            <li class="good"><i class="fas fa-check"></i> Coberturas modulares personalizáveis</li>
-            <li class="good"><i class="fas fa-check"></i> Sinistro resolvido em até 48h</li>
-          </ul>
-          <a href="#calculadora" class="btn btn-primary btn-lg mt-24">
-            <i class="fas fa-bolt"></i> Quero Essa Proteção
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== SAVINGS CALCULATOR ========== -->
-  <section class="calculator" id="calculadora">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Simulação Instantânea</span>
-        <h2 class="section-title">Descubra Quanto Você <span class="gradient-text">Economiza</span></h2>
-        <p class="section-desc">Arraste o slider e veja sua proteção em tempo real.</p>
-      </div>
-      <div class="calc-wrapper">
-        <div class="calc-card glass-card">
-          <div class="calc-left">
-            <label class="calc-label">Valor do seu veículo (Tabela FIPE)</label>
-            <div class="calc-slider-wrap">
-              <input type="range" id="carValueSlider" class="calc-slider" min="20000" max="500000" step="5000" value="80000" />
-              <div class="slider-track-fill" id="sliderFill"></div>
-            </div>
-            <div class="calc-value-display">
-              <span class="calc-currency">R$</span>
-              <span class="calc-bignum" id="carValueDisplay">80.000</span>
-            </div>
-            <div class="calc-range-labels">
-              <span>R$ 20.000</span>
-              <span>R$ 500.000</span>
-            </div>
-
-            <div class="calc-options">
-              <label class="calc-opt-label">Tipo de Veículo:</label>
-              <div class="vehicle-type-btns">
-                <button class="vtype-btn active" data-type="car"><i class="fas fa-car"></i> Carro</button>
-                <button class="vtype-btn" data-type="suv"><i class="fas fa-truck-monster"></i> SUV</button>
-                <button class="vtype-btn" data-type="moto"><i class="fas fa-motorcycle"></i> Moto</button>
+        <div class="hero-visual">
+          <div class="car-shield-wrapper">
+            <div class="shield-ring ring-1"></div>
+            <div class="shield-ring ring-2"></div>
+            <div class="shield-ring ring-3"></div>
+            <div class="car-card glass-card">
+              <div class="car-icon-big">
+                <i class="fas fa-car-side"></i>
+                <div class="shield-overlay"><i class="fas fa-shield-halved"></i></div>
               </div>
-            </div>
-
-            <div class="calc-options">
-              <label class="calc-opt-label">Coberturas adicionais:</label>
-              <div class="coverage-checks">
-                <label class="check-opt"><input type="checkbox" id="covThird" /> <span>Terceiros (R$50k)</span></label>
-                <label class="check-opt"><input type="checkbox" id="covNature" /> <span>Eventos Naturais</span></label>
-                <label class="check-opt"><input type="checkbox" id="covAssist" checked /> <span>Assistência 24h</span></label>
-              </div>
-            </div>
-          </div>
-
-          <div class="calc-right">
-            <div class="calc-result-card">
-              <div class="calc-result-label">Sua proteção Potência BR:</div>
-              <div class="calc-monthly">
-                <span class="calc-per">a partir de</span>
-                <div class="calc-price-row">
-                  <span class="calc-brl">R$</span>
-                  <span class="calc-price-num" id="monthlyPrice">127</span>
-                  <span class="calc-period">/mês</span>
+              <div class="car-card-stats">
+                <div class="ccs-item">
+                  <span class="ccs-label">Cobertura Ativa</span>
+                  <span class="ccs-value status-active"><i class="fas fa-circle"></i> On</span>
+                </div>
+                <div class="ccs-item">
+                  <span class="ccs-label">Assistência 24h</span>
+                  <span class="ccs-value status-active"><i class="fas fa-circle"></i> On</span>
+                </div>
+                <div class="ccs-item">
+                  <span class="ccs-label">Via FIPE</span>
+                  <span class="ccs-value text-cyan">R$ 85.000</span>
                 </div>
               </div>
-              <div class="calc-savings" id="calcSavings">
-                <i class="fas fa-piggy-bank"></i>
-                Você economiza até <strong id="savingsVal">R$ 890</strong>/ano vs. seguro tradicional
-              </div>
-              <div class="calc-discount-badge">
-                <i class="fas fa-tag"></i> 20% OFF nos 3 primeiros meses
-              </div>
-              <a href="#lead" class="btn btn-primary btn-full calc-cta">
-                <i class="fas fa-bolt"></i> Garantir Essa Cotação
-              </a>
-              <p class="calc-disclaimer">*Valores estimados. Cotação final sujeita a confirmação.</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+      <div class="hero-scroll-hint">
+        <span>Role para explorar</span>
+        <div class="scroll-arrow"><i class="fas fa-angle-down"></i></div>
+      </div>
+    </section>
 
-  <!-- ========== LEGAL / TRANSPARENCY ========== -->
-  <section class="legal" id="modelo">
-    <div class="container">
-      <div class="legal-grid">
-        <div class="legal-content">
-          <span class="section-tag">Transparência Total</span>
-          <h2 class="section-title">O Modelo <span class="gradient-text">Mutualista</span></h2>
-          <p class="legal-desc">
-            A Potência BR opera como uma associação de proteção veicular mutualista,
-            regulada e transparente. Todos os associados contribuem juntos para um fundo
-            coletivo que cobre os sinistros de qualquer membro — sem fins lucrativos
-            excessivos, sem cobranças abusivas.
-          </p>
-          <div class="legal-points">
-            <div class="legal-point">
-              <div class="lp-icon"><i class="fas fa-scale-balanced"></i></div>
-              <div>
-                <strong>Sem SUSEP</strong>
-                <p>Opera dentro da legislação vigente para associações de proteção mútua.</p>
-              </div>
-            </div>
-            <div class="legal-point">
-              <div class="lp-icon"><i class="fas fa-users"></i></div>
-              <div>
-                <strong>Poder Coletivo</strong>
-                <p>Mais de 30.000 associados garantem a solidez do fundo de proteção.</p>
-              </div>
-            </div>
-            <div class="legal-point">
-              <div class="lp-icon"><i class="fas fa-file-contract"></i></div>
-              <div>
-                <strong>Regulamento Claro</strong>
-                <p>Documento completo disponível para download. Sem letras miúdas escondidas.</p>
-              </div>
-            </div>
-          </div>
-          <a href="#" class="btn btn-ghost btn-lg" id="downloadRegBtn">
-            <i class="fas fa-file-arrow-down"></i> Baixar Regulamento Completo
-          </a>
-        </div>
-        <div class="legal-visual">
-          <div class="legal-stats-grid">
-            <div class="ls-card glass-card">
-              <div class="ls-num gradient-text">30k+</div>
-              <div class="ls-label">Associados Ativos</div>
-            </div>
-            <div class="ls-card glass-card">
-              <div class="ls-num gradient-text">98.7%</div>
-              <div class="ls-label">Sinistros Pagos</div>
-            </div>
-            <div class="ls-card glass-card">
-              <div class="ls-num gradient-text">48h</div>
-              <div class="ls-label">Prazo Médio de Resolução</div>
-            </div>
-            <div class="ls-card glass-card">
-              <div class="ls-num gradient-text">4.8★</div>
-              <div class="ls-label">Reclame Aqui</div>
-            </div>
-          </div>
+    <!-- ========== TRUST BAR ========== -->
+    <div class="trust-bar">
+      <div class="trust-ticker-wrap">
+        <div class="trust-ticker" id="trustTicker">
+          <span><i class="fas fa-car"></i> 30.000+ Veículos Protegidos</span>
+          <span><i class="fas fa-headset"></i> Cobertura Nacional 24/7</span>
+          <span><i class="fas fa-star"></i> Selo Reclame Aqui Ótimo</span>
+          <span><i class="fas fa-chart-line"></i> Tabela FIPE Garantida</span>
+          <span><i class="fas fa-mobile-screen"></i> 100% Digital</span>
+          <span><i class="fas fa-shield-halved"></i> Sem Análise de Perfil</span>
+          <span><i class="fas fa-bolt"></i> Ativação em Minutos</span>
+          <span><i class="fas fa-handshake"></i> Modelo Mutualista Transparente</span>
+          <!-- duplicated for seamless loop -->
+          <span><i class="fas fa-car"></i> 30.000+ Veículos Protegidos</span>
+          <span><i class="fas fa-headset"></i> Cobertura Nacional 24/7</span>
+          <span><i class="fas fa-star"></i> Selo Reclame Aqui Ótimo</span>
+          <span><i class="fas fa-chart-line"></i> Tabela FIPE Garantida</span>
+          <span><i class="fas fa-mobile-screen"></i> 100% Digital</span>
+          <span><i class="fas fa-shield-halved"></i> Sem Análise de Perfil</span>
+          <span><i class="fas fa-bolt"></i> Ativação em Minutos</span>
+          <span><i class="fas fa-handshake"></i> Modelo Mutualista Transparente</span>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- ========== APP SECTION ========== -->
-  <section class="app-section" id="app">
-    <div class="container">
-      <div class="app-grid">
-        <div class="app-mockup">
-          <div class="phone-frame">
-            <div class="phone-notch"></div>
-            <div class="phone-screen">
-              <div class="app-screen-header">
-                <span class="app-logo-sm"><i class="fas fa-shield-halved"></i> Potência BR</span>
-                <span class="app-notif"><i class="fas fa-bell"></i></span>
+    <!-- ========== BENTO BENEFITS ========== -->
+    <section class="benefits" id="beneficios">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Ecossistema de Proteção</span>
+          <h2 class="section-title">Cobertura <span class="gradient-text">Completa</span> para sua Tranquilidade</h2>
+          <p class="section-desc">Cada detalhe pensado para proteger você em qualquer situação.</p>
+        </div>
+        <div class="bento-grid">
+
+          <div class="bento-card bento-large glass-card" data-tilt>
+            <div class="bento-icon"><i class="fas fa-mask"></i></div>
+            <h3>Furto & Roubo</h3>
+            <p>Recuperação total do veículo ou pagamento do valor FIPE integral. Zero burocracia no momento que você
+              mais precisa.</p>
+            <div class="bento-badge">100% FIPE</div>
+            <div class="bento-glow"></div>
+          </div>
+
+          <div class="bento-card glass-card" data-tilt>
+            <div class="bento-icon"><i class="fas fa-car-burst"></i></div>
+            <h3>Colisão & Danos</h3>
+            <p>Rede credenciada de reparadores especializados em todo o Brasil.</p>
+            <div class="bento-glow"></div>
+          </div>
+
+          <div class="bento-card glass-card" data-tilt>
+            <div class="bento-icon"><i class="fas fa-cloud-bolt"></i></div>
+            <h3>Eventos da Natureza</h3>
+            <p>Proteção contra enchentes, granizo, vendaval e demais fenômenos climáticos.</p>
+            <div class="bento-glow"></div>
+          </div>
+
+          <div class="bento-card glass-card" data-tilt>
+            <div class="bento-icon"><i class="fas fa-people-arrows"></i></div>
+            <h3>Cobertura para Terceiros</h3>
+            <p>Até <strong>R$ 50.000</strong> de indenização a terceiros envolvidos em acidentes.</p>
+            <div class="bento-badge amber">R$50k</div>
+            <div class="bento-glow"></div>
+          </div>
+
+          <div class="bento-card bento-wide glass-card" data-tilt>
+            <div class="bento-icon"><i class="fas fa-truck-medical"></i></div>
+            <h3>Assistência 24 Horas</h3>
+            <p>Guincho de emergência, chaveiro, socorro elétrico e mecânico — a qualquer hora, em qualquer lugar do
+              Brasil. Um toque no app já aciona tudo.</p>
+            <div class="bento-badge">24/7 Nacional</div>
+            <div class="bento-glow"></div>
+          </div>
+
+          <div class="bento-card glass-card" data-tilt>
+            <div class="bento-icon"><i class="fas fa-mobile-screen-button"></i></div>
+            <h3>Gestão pelo App</h3>
+            <p>Abertura de sinistro, acompanhamento e documentos — tudo digital.</p>
+            <div class="bento-glow"></div>
+          </div>
+
+          <div class="bento-card glass-card" data-tilt>
+            <div class="bento-icon"><i class="fas fa-motorcycle"></i></div>
+            <h3>Motos & SUVs</h3>
+            <p>Cobertura premium para toda a família de veículos, incluindo motocicletas.</p>
+            <div class="bento-glow"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== COMPARISON TABLE ========== -->
+    <section class="comparison" id="comparativo">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Por Que nos Escolher</span>
+          <h2 class="section-title">O Fim da Era <span class="gradient-text">Burocrática</span></h2>
+          <p class="section-desc">Veja lado a lado por que a Potência BR é a escolha inteligente.</p>
+        </div>
+        <div class="comparison-grid">
+          <!-- Old Insurance -->
+          <div class="comp-card comp-old">
+            <div class="comp-header">
+              <div class="comp-icon old"><i class="fas fa-building-columns"></i></div>
+              <h3>Seguro Tradicional</h3>
+              <span class="comp-tag old-tag">Ultrapassado</span>
+            </div>
+            <ul class="comp-list">
+              <li class="bad"><i class="fas fa-xmark"></i> Análise de perfil discriminatória</li>
+              <li class="bad"><i class="fas fa-xmark"></i> Processo lento e burocrático</li>
+              <li class="bad"><i class="fas fa-xmark"></i> Preço elevado sem justificativa</li>
+              <li class="bad"><i class="fas fa-xmark"></i> Atendimento por terceirizados</li>
+              <li class="bad"><i class="fas fa-xmark"></i> Renovação anual complicada</li>
+              <li class="bad"><i class="fas fa-xmark"></i> Poucas opções de cobertura</li>
+              <li class="bad"><i class="fas fa-xmark"></i> Sinistro demora semanas</li>
+            </ul>
+          </div>
+          <!-- VS Divider -->
+          <div class="comp-vs">
+            <div class="vs-circle">VS</div>
+            <div class="vs-line"></div>
+          </div>
+          <!-- Potência BR -->
+          <div class="comp-card comp-new glass-card featured">
+            <div class="comp-header">
+              <div class="comp-icon new"><i class="fas fa-shield-halved"></i></div>
+              <h3>Potência BR</h3>
+              <span class="comp-tag new-tag"><i class="fas fa-bolt"></i> Recomendado</span>
+            </div>
+            <ul class="comp-list">
+              <li class="good"><i class="fas fa-check"></i> Sem análise de perfil</li>
+              <li class="good"><i class="fas fa-check"></i> Ativação 100% digital em minutos</li>
+              <li class="good"><i class="fas fa-check"></i> Preço justo via modelo mutualista</li>
+              <li class="good"><i class="fas fa-check"></i> Suporte próprio 24/7</li>
+              <li class="good"><i class="fas fa-check"></i> Gestão completa pelo app</li>
+              <li class="good"><i class="fas fa-check"></i> Coberturas modulares personalizáveis</li>
+              <li class="good"><i class="fas fa-check"></i> Sinistro resolvido em até 48h</li>
+            </ul>
+            <a href="#calculadora" class="btn btn-primary btn-lg mt-24">
+              <i class="fas fa-bolt"></i> Quero Essa Proteção
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SAVINGS CALCULATOR ========== -->
+    <section class="calculator" id="calculadora">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Simulação Instantânea</span>
+          <h2 class="section-title">Descubra Quanto Você <span class="gradient-text">Economiza</span></h2>
+          <p class="section-desc">Arraste o slider e veja sua proteção em tempo real.</p>
+        </div>
+        <div class="calc-wrapper">
+          <div class="calc-card glass-card">
+            <div class="calc-left">
+              <label class="calc-label">Valor do seu veículo (Tabela FIPE)</label>
+              <div class="calc-slider-wrap">
+                <input type="range" id="carValueSlider" class="calc-slider" min="20000" max="500000" step="5000"
+                  value="80000" aria-label="Valor do veículo" />
+                <div class="slider-track-fill" id="sliderFill"></div>
               </div>
-              <div class="app-screen-body">
-                <div class="app-status-card">
-                  <div class="app-car-icon"><i class="fas fa-car-side"></i></div>
-                  <div class="app-status-info">
-                    <span class="app-status-label">Cobertura Ativa</span>
-                    <span class="app-status-val on"><i class="fas fa-circle-dot"></i> Protegido</span>
+              <div class="calc-value-display">
+                <span class="calc-currency">R$</span>
+                <span class="calc-bignum" id="carValueDisplay">80.000</span>
+              </div>
+              <div class="calc-range-labels">
+                <span>R$ 20.000</span>
+                <span>R$ 500.000</span>
+              </div>
+
+              <div class="calc-options">
+                <label class="calc-opt-label">Tipo de Veículo:</label>
+                <div class="vehicle-type-btns">
+                  <button class="vtype-btn active" data-type="car"><i class="fas fa-car"></i> Carro</button>
+                  <button class="vtype-btn" data-type="suv"><i class="fas fa-truck-monster"></i> SUV</button>
+                  <button class="vtype-btn" data-type="moto"><i class="fas fa-motorcycle"></i> Moto</button>
+                </div>
+              </div>
+
+              <div class="calc-options">
+                <label class="calc-opt-label">Coberturas adicionais:</label>
+                <div class="coverage-checks">
+                  <label class="check-opt"><input type="checkbox" id="covThird" /> <span>Terceiros
+                      (R$50k)</span></label>
+                  <label class="check-opt"><input type="checkbox" id="covNature" /> <span>Eventos
+                      Naturais</span></label>
+                  <label class="check-opt"><input type="checkbox" id="covAssist" checked /> <span>Assistência
+                      24h</span></label>
+                </div>
+              </div>
+            </div>
+
+            <div class="calc-right">
+              <div class="calc-result-card">
+                <div class="calc-result-label">Sua proteção Potência BR:</div>
+                <div class="calc-monthly">
+                  <span class="calc-per">a partir de</span>
+                  <div class="calc-price-row">
+                    <span class="calc-brl">R$</span>
+                    <span class="calc-price-num" id="monthlyPrice">127</span>
+                    <span class="calc-period">/mês</span>
                   </div>
                 </div>
-                <div class="app-quick-actions">
-                  <div class="aqa-item cyan"><i class="fas fa-truck-medical"></i><span>Guincho</span></div>
-                  <div class="aqa-item amber"><i class="fas fa-triangle-exclamation"></i><span>Sinistro</span></div>
-                  <div class="aqa-item purple"><i class="fas fa-key"></i><span>Chaveiro</span></div>
-                  <div class="aqa-item green"><i class="fas fa-gas-pump"></i><span>Combustível</span></div>
+                <div class="calc-savings" id="calcSavings">
+                  <i class="fas fa-piggy-bank"></i>
+                  Você economiza até <strong id="savingsVal">R$ 890</strong>/ano vs. seguro tradicional
                 </div>
-                <div class="app-recent">
-                  <span class="app-recent-label">Última Atividade</span>
-                  <div class="app-recent-item"><i class="fas fa-check-circle"></i> Mensalidade paga – Jan 2026</div>
-                  <div class="app-recent-item"><i class="fas fa-file-circle-check"></i> Vistoria aprovada</div>
+                <div class="calc-discount-badge">
+                  <i class="fas fa-tag"></i> 20% OFF nos 3 primeiros meses
+                </div>
+                <a href="#lead" class="btn btn-primary btn-full calc-cta">
+                  <i class="fas fa-bolt"></i> Garantir Essa Cotação
+                </a>
+                <p class="calc-disclaimer">*Valores estimados. Cotação final sujeita a confirmação.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== LEGAL / TRANSPARENCY ========== -->
+    <section class="legal" id="modelo">
+      <div class="container">
+        <div class="legal-grid">
+          <div class="legal-content">
+            <span class="section-tag">Transparência Total</span>
+            <h2 class="section-title">O Modelo <span class="gradient-text">Mutualista</span></h2>
+            <p class="legal-desc">
+              A Potência BR opera como uma associação de proteção veicular mutualista,
+              regulada e transparente. Todos os associados contribuem juntos para um fundo
+              coletivo que cobre os sinistros de qualquer membro — sem fins lucrativos
+              excessivos, sem cobranças abusivas.
+            </p>
+            <div class="legal-points">
+              <div class="legal-point">
+                <div class="lp-icon"><i class="fas fa-scale-balanced" aria-hidden="true"></i></div>
+                <div>
+                  <strong>Sem SUSEP</strong>
+                  <p>Opera dentro da legislação vigente para associações de proteção mútua.</p>
+                </div>
+              </div>
+              <div class="legal-point">
+                <div class="lp-icon"><i class="fas fa-users" aria-hidden="true"></i></div>
+                <div>
+                  <strong>Poder Coletivo</strong>
+                  <p>Mais de 30.000 associados garantem a solidez do fundo de proteção.</p>
+                </div>
+              </div>
+              <div class="legal-point">
+                <div class="lp-icon"><i class="fas fa-file-contract" aria-hidden="true"></i></div>
+                <div>
+                  <strong>Regulamento Claro</strong>
+                  <p>Documento completo disponível para download. Sem letras miúdas escondidas.</p>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="phone-glow"></div>
-        </div>
-        <div class="app-content">
-          <span class="section-tag">App Mobile</span>
-          <h2 class="section-title">Tudo na <span class="gradient-text">Palma da Mão:</span><br />Assistência 24h em Um Toque</h2>
-          <p class="app-desc">Do acionamento de guincho à abertura de sinistro, o app Potência BR coloca o controle total da sua proteção a um toque de distância — a qualquer hora, em qualquer lugar.</p>
-          <ul class="app-features">
-            <li><i class="fas fa-check-circle"></i> Acionamento de assistência com 1 toque</li>
-            <li><i class="fas fa-check-circle"></i> Acompanhe seu sinistro em tempo real</li>
-            <li><i class="fas fa-check-circle"></i> Documentos e apólice digitais</li>
-            <li><i class="fas fa-check-circle"></i> Chat direto com especialistas 24/7</li>
-            <li><i class="fas fa-check-circle"></i> Histórico completo de pagamentos</li>
-          </ul>
-          <div class="app-store-btns">
-            <a href="#" class="store-btn glass-card">
-              <i class="fab fa-google-play"></i>
-              <div><span class="store-sub">Disponível no</span><span class="store-name">Google Play</span></div>
-            </a>
-            <a href="#" class="store-btn glass-card">
-              <i class="fab fa-apple"></i>
-              <div><span class="store-sub">Baixe na</span><span class="store-name">App Store</span></div>
+            <a href="#" class="btn btn-ghost btn-lg" id="downloadRegBtn">
+              <i class="fas fa-file-arrow-down"></i> Baixar Regulamento Completo
             </a>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== TESTIMONIALS ========== -->
-  <section class="testimonials" id="depoimentos">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Histórias de Paz</span>
-        <h2 class="section-title">Quem Já Protege seu <span class="gradient-text">Patrimônio</span></h2>
-        <p class="section-desc">Depoimentos reais de associados Potência BR.</p>
-      </div>
-      <div class="testimonials-slider">
-        <div class="testi-track" id="testiTrack">
-
-          <div class="testi-card glass-card">
-            <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
-            <p class="testi-text">"Meu carro foi roubado numa segunda-feira e na quinta-feira já recebi o valor integral da FIPE depositado. Não acreditei! Com o seguro tradicional levei 40 dias em outra ocorrência."</p>
-            <div class="testi-author">
-              <div class="testi-avatar">RM</div>
-              <div>
-                <strong>Ricardo Mendes</strong>
-                <span>Empresário – São Paulo, SP</span>
+          <div class="legal-visual">
+            <div class="legal-stats-grid">
+              <div class="ls-card glass-card">
+                <div class="ls-num gradient-text">30k+</div>
+                <div class="ls-label">Associados Ativos</div>
               </div>
-              <div class="testi-stars">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+              <div class="ls-card glass-card">
+                <div class="ls-num gradient-text">98.7%</div>
+                <div class="ls-label">Sinistros Pagos</div>
+              </div>
+              <div class="ls-card glass-card">
+                <div class="ls-num gradient-text">48h</div>
+                <div class="ls-label">Prazo Médio de Resolução</div>
+              </div>
+              <div class="ls-card glass-card">
+                <div class="ls-num gradient-text">4.8★</div>
+                <div class="ls-label">Reclame Aqui</div>
               </div>
             </div>
           </div>
-
-          <div class="testi-card glass-card">
-            <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
-            <p class="testi-text">"Bati meu SUV numa chuva forte em Curitiba. Abri o sinistro pelo app em 5 minutos, o guincho chegou em 20 minutos. O carro ficou pronto em 6 dias. Serviço impecável!"</p>
-            <div class="testi-author">
-              <div class="testi-avatar">PC</div>
-              <div>
-                <strong>Patrícia Costa</strong>
-                <span>Médica – Curitiba, PR</span>
-              </div>
-              <div class="testi-stars">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              </div>
-            </div>
-          </div>
-
-          <div class="testi-card glass-card">
-            <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
-            <p class="testi-text">"Economizei mais de R$200 por mês migrando para a Potência BR. O atendimento é infinitamente melhor e o app é sensacional. Indico para todo mundo!"</p>
-            <div class="testi-author">
-              <div class="testi-avatar">FS</div>
-              <div>
-                <strong>Felipe Santos</strong>
-                <span>Motorista de Aplicativo – Rio de Janeiro, RJ</span>
-              </div>
-              <div class="testi-stars">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              </div>
-            </div>
-          </div>
-
-          <div class="testi-card glass-card">
-            <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
-            <p class="testi-text">"Granizo destruiu minha moto. Em menos de 48 horas resolveram tudo. Atendimento humano, rápido e eficiente. Nunca mais volto para o seguro tradicional!"</p>
-            <div class="testi-author">
-              <div class="testi-avatar">AL</div>
-              <div>
-                <strong>Ana Lima</strong>
-                <span>Entregadora – Belo Horizonte, MG</span>
-              </div>
-              <div class="testi-stars">
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <div class="testi-controls">
-          <button class="testi-btn" id="testiPrev"><i class="fas fa-chevron-left"></i></button>
-          <div class="testi-dots" id="testiDots"></div>
-          <button class="testi-btn" id="testiNext"><i class="fas fa-chevron-right"></i></button>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ========== LEAD MAGNET ========== -->
-  <section class="lead-magnet" id="lead">
-    <div class="container">
-      <div class="lead-grid">
-        <div class="lead-content">
-          <div class="lead-badge"><i class="fas fa-gift"></i> Grátis para você</div>
-          <h2 class="section-title">Baixe o Guia: <span class="gradient-text">"O Que Fazer em Caso de Sinistro"</span></h2>
-          <p class="lead-desc">Um guia completo e prático com o passo a passo para agir com calma e eficiência nos momentos de maior vulnerabilidade. Mais de 15.000 downloads.</p>
-          <ul class="lead-benefits">
-            <li><i class="fas fa-check"></i> Checklist de emergência para imprimir e guardar no carro</li>
-            <li><i class="fas fa-check"></i> O que falar (e o que NÃO falar) após um acidente</li>
-            <li><i class="fas fa-check"></i> Como registrar provas corretamente pelo celular</li>
-            <li><i class="fas fa-check"></i> Contatos de emergência por estado</li>
-          </ul>
-        </div>
-        <div class="lead-form-wrap glass-card">
-          <h3>Receba Agora no seu E-mail</h3>
-          <form class="lead-form" id="leadForm" onsubmit="handleLeadForm(event)">
-            <div class="form-group">
-              <label for="leadName"><i class="fas fa-user"></i> Nome Completo</label>
-              <input type="text" id="leadName" name="name" placeholder="Seu nome" required />
+    <!-- ========== APP SECTION ========== -->
+    <section class="app-section" id="app">
+      <div class="container">
+        <div class="app-grid">
+          <div class="app-mockup">
+            <div class="phone-frame">
+              <div class="phone-notch"></div>
+              <div class="phone-screen">
+                <div class="app-screen-header">
+                  <span class="app-logo-sm"><i class="fas fa-shield-halved"></i> Potência BR</span>
+                  <span class="app-notif"><i class="fas fa-bell"></i></span>
+                </div>
+                <div class="app-screen-body">
+                  <div class="app-status-card">
+                    <div class="app-car-icon"><i class="fas fa-car-side"></i></div>
+                    <div class="app-status-info">
+                      <span class="app-status-label">Cobertura Ativa</span>
+                      <span class="app-status-val on"><i class="fas fa-circle-dot"></i> Protegido</span>
+                    </div>
+                  </div>
+                  <div class="app-quick-actions">
+                    <div class="aqa-item cyan"><i class="fas fa-truck-medical"></i><span>Guincho</span></div>
+                    <div class="aqa-item amber"><i class="fas fa-triangle-exclamation"></i><span>Sinistro</span></div>
+                    <div class="aqa-item purple"><i class="fas fa-key"></i><span>Chaveiro</span></div>
+                    <div class="aqa-item green"><i class="fas fa-gas-pump"></i><span>Combustível</span></div>
+                  </div>
+                  <div class="app-recent">
+                    <span class="app-recent-label">Última Atividade</span>
+                    <div class="app-recent-item"><i class="fas fa-check-circle"></i> Mensalidade paga – Jan 2026</div>
+                    <div class="app-recent-item"><i class="fas fa-file-circle-check"></i> Vistoria aprovada</div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="form-group">
-              <label for="leadEmail"><i class="fas fa-envelope"></i> E-mail</label>
-              <input type="email" id="leadEmail" name="email" placeholder="seu@email.com" required />
+            <div class="phone-glow"></div>
+          </div>
+          <div class="app-content">
+            <span class="section-tag">App Mobile</span>
+            <h2 class="section-title">Tudo na <span class="gradient-text">Palma da Mão:</span><br />Assistência 24h em
+              Um Toque</h2>
+            <p class="app-desc">Do acionamento de guincho à abertura de sinistro, o app Potência BR coloca o controle
+              total da sua proteção a um toque de distância — a qualquer hora, em qualquer lugar.</p>
+            <ul class="app-features">
+              <li><i class="fas fa-check-circle"></i> Acionamento de assistência com 1 toque</li>
+              <li><i class="fas fa-check-circle"></i> Acompanhe seu sinistro em tempo real</li>
+              <li><i class="fas fa-check-circle"></i> Documentos e apólice digitais</li>
+              <li><i class="fas fa-check-circle"></i> Chat direto com especialistas 24/7</li>
+              <li><i class="fas fa-check-circle"></i> Histórico completo de pagamentos</li>
+            </ul>
+            <div class="app-store-btns">
+              <a href="#" class="store-btn glass-card">
+                <i class="fab fa-google-play"></i>
+                <div><span class="store-sub">Disponível no</span><span class="store-name">Google Play</span></div>
+              </a>
+              <a href="#" class="store-btn glass-card">
+                <i class="fab fa-apple"></i>
+                <div><span class="store-sub">Baixe na</span><span class="store-name">App Store</span></div>
+              </a>
             </div>
-            <div class="form-group">
-              <label for="leadPhone"><i class="fas fa-phone"></i> WhatsApp</label>
-              <input type="tel" id="leadPhone" name="phone" placeholder="(11) 99999-9999" />
-            </div>
-            <button type="submit" class="btn btn-primary btn-full">
-              <i class="fas fa-file-arrow-down"></i> Baixar Guia Grátis
-            </button>
-            <p class="form-privacy"><i class="fas fa-lock"></i> Seus dados estão seguros. Sem spam.</p>
-          </form>
-          <div class="lead-success" id="leadSuccess" style="display:none;">
-            <div class="success-icon"><i class="fas fa-circle-check"></i></div>
-            <h3>Guia enviado com sucesso!</h3>
-            <p>Verifique sua caixa de entrada (e o spam, por via das dúvidas).</p>
-            <a href="#calculadora" class="btn btn-primary btn-full">
-              <i class="fas fa-bolt"></i> Fazer Minha Cotação Agora
-            </a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ========== FINAL CTA ========== -->
-  <section class="final-cta">
-    <div class="final-cta-bg"></div>
-    <div class="container">
-      <div class="fca-inner glass-card">
-        <div class="fca-badge"><i class="fas fa-bolt"></i> Oferta por Tempo Limitado</div>
-        <h2 class="fca-title">Proteja seu Veículo <span class="gradient-text">Agora</span></h2>
-        <p class="fca-sub">20% de desconto nos primeiros 3 meses. Ativação imediata. Sem análise de perfil.</p>
-        <div class="fca-timer" id="fcaTimer">
-          <div class="timer-block"><span id="timerH">02</span><small>horas</small></div>
-          <div class="timer-sep">:</div>
-          <div class="timer-block"><span id="timerM">47</span><small>min</small></div>
-          <div class="timer-sep">:</div>
-          <div class="timer-block"><span id="timerS">33</span><small>seg</small></div>
+    <!-- ========== TESTIMONIALS ========== -->
+    <section class="testimonials" id="depoimentos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Histórias de Paz</span>
+          <h2 class="section-title">Quem Já Protege seu <span class="gradient-text">Patrimônio</span></h2>
+          <p class="section-desc">Depoimentos reais de associados Potência BR.</p>
         </div>
-        <a href="#lead" class="btn btn-amber btn-xl pulse-glow">
-          <i class="fas fa-shield-halved"></i> Garantir Minha Proteção com 20% OFF
-        </a>
-        <p class="fca-note">Sem cartão de crédito para ativar. Cancele quando quiser.</p>
+        <div class="testimonials-slider">
+          <div class="testi-track" id="testiTrack">
+
+            <div class="testi-card glass-card">
+              <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
+              <p class="testi-text">"Meu carro foi roubado numa segunda-feira e na quinta-feira já recebi o valor
+                integral da FIPE depositado. Não acreditei! Com o seguro tradicional levei 40 dias em outra ocorrência."
+              </p>
+              <div class="testi-author">
+                <div class="testi-avatar">RM</div>
+                <div>
+                  <strong>Ricardo Mendes</strong>
+                  <span>Empresário – São Paulo, SP</span>
+                </div>
+                <div class="testi-stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="testi-card glass-card">
+              <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
+              <p class="testi-text">"Bati meu SUV numa chuva forte em Curitiba. Abri o sinistro pelo app em 5 minutos, o
+                guincho chegou em 20 minutos. O carro ficou pronto em 6 dias. Serviço impecável!"</p>
+              <div class="testi-author">
+                <div class="testi-avatar">PC</div>
+                <div>
+                  <strong>Patrícia Costa</strong>
+                  <span>Médica – Curitiba, PR</span>
+                </div>
+                <div class="testi-stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="testi-card glass-card">
+              <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
+              <p class="testi-text">"Economizei mais de R$200 por mês migrando para a Potência BR. O atendimento é
+                infinitamente melhor e o app é sensacional. Indico para todo mundo!"</p>
+              <div class="testi-author">
+                <div class="testi-avatar">FS</div>
+                <div>
+                  <strong>Felipe Santos</strong>
+                  <span>Motorista de Aplicativo – Rio de Janeiro, RJ</span>
+                </div>
+                <div class="testi-stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="testi-card glass-card">
+              <div class="testi-quote"><i class="fas fa-quote-left"></i></div>
+              <p class="testi-text">"Granizo destruiu minha moto. Em menos de 48 horas resolveram tudo. Atendimento
+                humano, rápido e eficiente. Nunca mais volto para o seguro tradicional!"</p>
+              <div class="testi-author">
+                <div class="testi-avatar">AL</div>
+                <div>
+                  <strong>Ana Lima</strong>
+                  <span>Entregadora – Belo Horizonte, MG</span>
+                </div>
+                <div class="testi-stars">
+                  <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                    class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="testi-controls">
+            <button class="testi-btn" id="testiPrev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+            <div class="testi-dots" id="testiDots"></div>
+            <button class="testi-btn" id="testiNext" aria-label="Próximo"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- ========== LEAD MAGNET ========== -->
+    <section class="lead-magnet" id="lead">
+      <div class="container">
+        <div class="lead-grid">
+          <div class="lead-content">
+            <div class="lead-badge"><i class="fas fa-gift"></i> Grátis para você</div>
+            <h2 class="section-title">Baixe o Guia: <span class="gradient-text">"O Que Fazer em Caso de Sinistro"</span>
+            </h2>
+            <p class="lead-desc">Um guia completo e prático com o passo a passo para agir com calma e eficiência nos
+              momentos de maior vulnerabilidade. Mais de 15.000 downloads.</p>
+            <ul class="lead-benefits">
+              <li><i class="fas fa-check"></i> Checklist de emergência para imprimir e guardar no carro</li>
+              <li><i class="fas fa-check"></i> O que falar (e o que NÃO falar) após um acidente</li>
+              <li><i class="fas fa-check"></i> Como registrar provas corretamente pelo celular</li>
+              <li><i class="fas fa-check"></i> Contatos de emergência por estado</li>
+            </ul>
+          </div>
+          <div class="lead-form-wrap glass-card">
+            <h3>Receba Agora no seu E-mail</h3>
+            <form class="lead-form" id="leadForm" onsubmit="handleLeadForm(event)">
+              <div class="form-group">
+                <label for="leadName"><i class="fas fa-user"></i> Nome Completo</label>
+                <input type="text" id="leadName" name="name" placeholder="Seu nome" required />
+              </div>
+              <div class="form-group">
+                <label for="leadEmail"><i class="fas fa-envelope"></i> E-mail</label>
+                <input type="email" id="leadEmail" name="email" placeholder="seu@email.com" required />
+              </div>
+              <div class="form-group">
+                <label for="leadPhone"><i class="fas fa-phone"></i> WhatsApp</label>
+                <input type="tel" id="leadPhone" name="phone" placeholder="(11) 99999-9999" />
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">
+                <i class="fas fa-file-arrow-down"></i> Baixar Guia Grátis
+              </button>
+              <p class="form-privacy"><i class="fas fa-lock"></i> Seus dados estão seguros. Sem spam.</p>
+            </form>
+            <div class="lead-success" id="leadSuccess" style="display:none;">
+              <div class="success-icon"><i class="fas fa-circle-check"></i></div>
+              <h3>Guia enviado com sucesso!</h3>
+              <p>Verifique sua caixa de entrada (e o spam, por via das dúvidas).</p>
+              <a href="#calculadora" class="btn btn-primary btn-full">
+                <i class="fas fa-bolt"></i> Fazer Minha Cotação Agora
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FINAL CTA ========== -->
+    <section class="final-cta">
+      <div class="final-cta-bg"></div>
+      <div class="container">
+        <div class="fca-inner glass-card">
+          <div class="fca-badge"><i class="fas fa-bolt"></i> Oferta por Tempo Limitado</div>
+          <h2 class="fca-title">Proteja seu Veículo <span class="gradient-text">Agora</span></h2>
+          <p class="fca-sub">20% de desconto nos primeiros 3 meses. Ativação imediata. Sem análise de perfil.</p>
+          <div class="fca-timer" id="fcaTimer">
+            <div class="timer-block"><span id="timerH">02</span><small>horas</small></div>
+            <div class="timer-sep">:</div>
+            <div class="timer-block"><span id="timerM">47</span><small>min</small></div>
+            <div class="timer-sep">:</div>
+            <div class="timer-block"><span id="timerS">33</span><small>seg</small></div>
+          </div>
+          <a href="#lead" class="btn btn-amber btn-xl pulse-glow">
+            <i class="fas fa-shield-halved"></i> Garantir Minha Proteção com 20% OFF
+          </a>
+          <p class="fca-note">Sem cartão de crédito para ativar. Cancele quando quiser.</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
@@ -677,8 +768,8 @@
           </div>
         </div>
         <div class="footer-col">
-          <h4>Produto</h4>
-          <ul>
+          <h4 id="footer-prod-head">Produto</h4>
+          <ul aria-labelledby="footer-prod-head">
             <li><a href="#beneficios">Coberturas</a></li>
             <li><a href="#comparativo">Comparativo</a></li>
             <li><a href="#calculadora">Calcular Plano</a></li>
@@ -687,8 +778,8 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Suporte</h4>
-          <ul>
+          <h4 id="footer-sup-head">Suporte</h4>
+          <ul aria-labelledby="footer-sup-head">
             <li><a href="#">Central de Ajuda</a></li>
             <li><a href="#">Abrir Sinistro</a></li>
             <li><a href="#">Assistência 24h</a></li>
@@ -697,8 +788,8 @@
           </ul>
         </div>
         <div class="footer-col">
-          <h4>Legal</h4>
-          <ul>
+          <h4 id="footer-legal-head">Legal</h4>
+          <ul aria-labelledby="footer-legal-head">
             <li><a href="#">Regulamento</a></li>
             <li><a href="#">Política de Privacidade</a></li>
             <li><a href="#">Termos de Uso</a></li>
@@ -708,13 +799,15 @@
       </div>
       <div class="footer-bottom">
         <p>&copy; 2026 Potência BR Proteção Veicular Mútua. Todos os direitos reservados.</p>
-        <p class="footer-disclaimer">Associação de proteção veicular mútua. Não é seguradora. Opera sob legislação vigente para associações civis.</p>
+        <p class="footer-disclaimer">Associação de proteção veicular mútua. Não é seguradora. Opera sob legislação
+          vigente para associações civis.</p>
       </div>
     </div>
   </footer>
 
   <!-- ========== WHATSAPP FLOATING BTN ========== -->
-  <a href="https://wa.me/5511999999999?text=Olá!%20Quero%20cotar%20minha%20proteção%20veicular%20com%2020%25%20de%20desconto." class="whatsapp-float" id="whatsappFloat" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+  <a href="https://wa.me/5511999999999?text=Olá!%20Quero%20cotar%20minha%20proteção%20veicular%20com%2020%25%20de%20desconto."
+    class="whatsapp-float" id="whatsappFloat" target="_blank" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
     <i class="fab fa-whatsapp"></i>
     <span class="wapp-badge">1</span>
     <div class="wapp-tooltip">Falar com especialista</div>
@@ -733,7 +826,8 @@
     </a>
   </div>
 
-  <script src="js/main.js"></script>
-  <script src="js/calculator.js"></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/calculator.js" defer></script>
 </body>
+
 </html>

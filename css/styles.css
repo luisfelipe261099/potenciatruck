@@ -10,10 +10,10 @@
   --navy-mid:    #EAEAE6;       /* alternate section */
   --navy-light:  #D8D8D4;       /* input track / dividers */
   --navy-card:   #FFFFFF;       /* card surface */
-  /* ─ Brand Olive ──────────────────────────────── */
-  --cyan:        #7F8C4D;
-  --cyan-dim:    rgba(127, 140, 77, 0.09);
-  --cyan-glow:   rgba(127, 140, 77, 0.22);
+  /* ─ Brand Olive (Darker for Contrast) ───────── */
+  --cyan:        #5E6939;
+  --cyan-dim:    rgba(94, 105, 57, 0.09);
+  --cyan-glow:   rgba(94, 105, 57, 0.22);
   /* ─ CTA Amber (dark for light bg) ───────────────── */
   --amber:       #C07D00;
   --amber-dim:   rgba(192, 125, 0, 0.1);
@@ -84,7 +84,13 @@ input, select, textarea { font-family: inherit; }
 }
 
 /* ---------- SECTION COMMONS ---------- */
-section { padding: 100px 0; position: relative; overflow: hidden; }
+section { 
+  padding: 100px 0; 
+  position: relative; 
+  overflow: hidden; 
+  content-visibility: auto; 
+  contain-intrinsic-size: 0 500px;
+}
 .section-header { text-align: center; margin-bottom: 60px; }
 .section-tag {
   display: inline-block;
