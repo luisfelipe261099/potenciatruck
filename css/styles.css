@@ -26,8 +26,8 @@
   --platinum: #6A6A68;
   /* ─ Text colors (DARK on light bg) ───────────────── */
   --white: #1C1C1A;
-  --white-dim: rgba(28, 28, 26, 0.82);
-  --white-muted: rgba(28, 28, 26, 0.62);
+  --white-dim: rgba(28, 28, 26, 0.96);
+  --white-muted: rgba(28, 28, 26, 0.88);
   /* ─ Cards & Surfaces ──────────────────────────── */
   --glass-bg: #FFFFFF;
   --glass-border: #E0E0DC;
@@ -166,7 +166,7 @@ section {
 
 .section-desc {
   font-size: 1.05rem;
-  color: var(--white-muted);
+  color: var(--white-dim);
   max-width: 600px;
   margin: 0 auto;
 }
