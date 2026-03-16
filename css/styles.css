@@ -2184,45 +2184,49 @@ section {
   left: 0;
   right: 0;
   z-index: 950;
-  background: rgba(20, 20, 18, 0.97);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 10px 16px;
+  background: #373435;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 16px;
   gap: 10px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .emg-btn {
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  padding: 12px 8px;
+  gap: 4px;
+  padding: 10px 6px;
   border-radius: var(--radius-md);
-  font-size: 0.85rem;
+  font-size: 0.72rem;
   font-weight: 700;
+  text-transform: uppercase;
   letter-spacing: 0.02em;
   transition: var(--transition);
 }
 
+.emg-btn i {
+  font-size: 1.1rem;
+}
+
 .emg-call {
-  background: rgba(255, 77, 109, 0.15);
-  border: 1px solid rgba(255, 77, 109, 0.4);
-  color: #FF4D6D;
+  background: transparent;
+  border: 1px solid rgba(122, 140, 58, 0.4);
+  color: #7A8C3A;
 }
 
 .emg-whatsapp {
-  background: rgba(37, 211, 102, 0.15);
-  border: 1px solid rgba(37, 211, 102, 0.4);
-  color: #25D366;
+  background: #7A8C3A;
+  color: #FFFFFF;
+  border: none;
 }
 
 .emg-quote {
   background: var(--amber);
   color: #FFFFFF;
   border: none;
-  font-weight: 700;
 }
 
 /* ============================================================
@@ -2400,11 +2404,16 @@ section {
   .hero-stats {
     justify-content: center;
     gap: 10px;
+    margin-top: 20px;
   }
 
   .stat-pill {
     padding: 10px 14px;
     min-width: 64px;
+  }
+
+  .hero-scroll-hint {
+    display: none;
   }
 
   .car-shield-wrapper {
