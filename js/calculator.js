@@ -1,5 +1,5 @@
 /* ============================================================
-   POTÊNCIA BR – Interactive Savings Calculator
+   PotenciaBR – Interactive Savings Calculator
    ============================================================ */
 
 'use strict';

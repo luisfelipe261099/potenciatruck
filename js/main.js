@@ -1,5 +1,5 @@
 /* ============================================================
-   POTÊNCIA BR – Main JavaScript (Performance Optimized)
+   PotenciaBR – Main JavaScript (Performance Optimized)
    ============================================================ */
 
 'use strict';
