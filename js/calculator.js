@@ -8,13 +8,13 @@
 
   // ── Pricing model ────────────────────────────────────────────────
   // Monthly rate: base % of FIPE value, with vehicle type multipliers
-  var BASE_RATE = 0.0016;  // 0.16% of FIPE per month for cars
+  var BASE_RATE = 0.0030;  // 0.30% of FIPE per month for cars
 
   var TYPE_MULTIPLIER = { car: 1.0, suv: 1.12, moto: 0.88 };
   var COVERAGE_ADD    = { third: 18, nature: 14, assist: 9 };
 
   // Traditional insurance estimate: ~0.35% of FIPE/month
-  var TRAD_RATE = 0.0035;
+  var TRAD_RATE = 0.0055;  // ~0.55% of FIPE/month for traditional insurance
 
   var currentType = 'car';
 
